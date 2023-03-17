@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL.Admin.Property
+namespace BLL.User.Property
 {
-    class UserRegisterProperty
+    class UserRegistration
     {
         public int Id { get; set; }
         public string UName { get; set; }
