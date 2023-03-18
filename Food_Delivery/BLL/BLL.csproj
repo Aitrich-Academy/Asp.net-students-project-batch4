@@ -43,6 +43,19 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\Manager\UserLoginManager.cs" />
+    <Compile Include="User\Manager\UserRegisterManager.cs" />
+    <Compile Include="User\Property\UserLoginProperty.cs" />
+    <Compile Include="User\Property\UserRegisterProperty.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DLL\DLL.csproj">
+      <Project>{8B5C83E2-89B8-4430-82AE-59C02C55CEE8}</Project>
+      <Name>DLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

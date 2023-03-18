@@ -15,31 +15,24 @@ namespace DLL
         public SqlConnection con;
         public SqlConnection GetConnection()
         {
-            SqlConnection con = new SqlConnection("Data Source=AITRICH-WIN8\\sqlexpress;Initial Catalog=StudentManagementSystem;User ID=students;Password=password");
-           if (con.State == ConnectionState.Open)
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-MT5MG1F\\SQLEXPRESS;Initial Catalog=FoodOrderingProject;Integrated Security=True");
+            if (con.State == ConnectionState.Open)
             {
-
                 con.Close();
-
             }
             con.Open();
             return con;
         }
 
-
         public DataTable getdatatable(string query)
         {
-
-            SqlDataAdapter ad = new SqlDataAdapter(query, GetConnection());
+            SqlDataAdapter da = new SqlDataAdapter(query, GetConnection());
             DataTable dt = new DataTable();
-            ad.Fill(dt);
+            da.Fill(dt);
             return dt;
         }
-
-        public DataTable getdatatable(SortedList list, string query)
+        public DataTable Getdatatabel(SortedList list, string query)
         {
-
-
             SqlCommand cmd = new SqlCommand(query, GetConnection());
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -60,12 +53,7 @@ namespace DLL
             DataTable dt = new DataTable();
             ad.Fill(dt);
             return dt;
-
-
-
         }
-
-
         public object execscalar(string query)
         {
 
