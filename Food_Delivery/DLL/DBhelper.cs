@@ -15,7 +15,7 @@ namespace DLL
         public SqlConnection con;
         public SqlConnection GetConnection()
         {
-            //SqlConnection con = new SqlConnection("Data Source=DESKTOP-MT5MG1F\\SQLEXPRESS;Initial Catalog=FoodOrderingProject;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-MT5MG1F\\SQLEXPRESS;Initial Catalog=FoodOrderingProject;Integrated Security=True");
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
