@@ -15,5 +15,12 @@ namespace BLL.User.Manager
         public UserLoginProperty user_log_Pro = new UserLoginProperty();
         private SortedList S1 = new SortedList();
 
+        public string user_login()
+        {
+            S1.Clear();
+            S1.Add("Username", user_log_Pro.Username);
+            S1.Add("Password", user_log_Pro.Password);
+            return db_obj.executeprocedure(S1,"User_Login");
+        }
     }
 }
