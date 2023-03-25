@@ -41,16 +41,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Manager\CategoryManager.cs" />
+    <Compile Include="Admin\Manager\ItemManager.cs" />
+    <Compile Include="Admin\Manager\ViewFeedbackManager.cs" />
+    <Compile Include="Admin\Manager\ViewOrderManager.cs" />
+    <Compile Include="Admin\Property\CategoryProperty.cs" />
+    <Compile Include="Admin\Property\ItemProperty.cs" />
+    <Compile Include="Admin\Property\ViewFeedbackProperty.cs" />
+    <Compile Include="Admin\Property\ViewOrderProperty.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\Manager\UserFeedbackManager.cs" />
     <Compile Include="User\Manager\UserLoginManager.cs" />
     <Compile Include="User\Manager\UserRegisterManager.cs" />
+    <Compile Include="User\Manager\ViewProfileManager.cs" />
+    <Compile Include="User\Property\UserFeedBackProperty.cs" />
     <Compile Include="User\Property\UserLoginProperty.cs" />
+    <Compile Include="User\Property\UserLogoutProperty.cs" />
     <Compile Include="User\Property\UserRegisterProperty.cs" />
+    <Compile Include="User\Property\ViewProfileProperty.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Admin\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DLL\DLL.csproj">
       <Project>{8B5C83E2-89B8-4430-82AE-59C02C55CEE8}</Project>

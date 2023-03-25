@@ -106,6 +106,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Admin\AddCategory.aspx" />
+    <Content Include="Admin\AddItem.aspx" />
+    <Content Include="Admin\AdminViewFeedback.aspx" />
+    <Content Include="Admin\ViewOrders.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -114,7 +118,16 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\Capture1.PNG" />
+    <Content Include="fonts\Capturedsdf.PNG" />
+    <Content Include="fonts\Clock.PNG" />
+    <Content Include="fonts\contact.PNG" />
+    <Content Include="fonts\food.jpg" />
+    <Content Include="fonts\global.jpg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\mail.PNG" />
+    <Content Include="fonts\mandeliver.PNG" />
+    <Content Include="fonts\pin.PNG" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -124,8 +137,54 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Images\0556.jpg0556.jpg" />
+    <Content Include="Images\0998.jpg0998.jpg" />
+    <Content Include="Images\1030.jpg1030.jpg" />
+    <Content Include="Images\2477.jpg" />
+    <Content Include="Images\2930.jpg" />
+    <Content Include="Images\3133.jpg3133.jpg" />
+    <Content Include="Images\3238.jpg3238.jpg" />
+    <Content Include="Images\3265.jpg3265.jpg" />
+    <Content Include="Images\3983.jpg" />
+    <Content Include="Images\4068.jpg4068.jpg" />
+    <Content Include="Images\4668.jpg" />
+    <Content Include="Images\4797.jpg" />
+    <Content Include="Images\5667.jpg" />
+    <Content Include="Images\5991.jpg" />
+    <Content Include="Images\6451.jpg" />
+    <Content Include="Images\6657.jpg" />
+    <Content Include="Images\7420.jpg7420.jpg" />
+    <Content Include="Images\7580.jpg" />
+    <Content Include="Images\7693.jpg7693.jpg" />
+    <Content Include="Images\7723.jpg" />
+    <Content Include="Images\8767.jpg" />
+    <Content Include="Images\9254.jpg9254.jpg" />
+    <Content Include="Images\9441.jpg" />
+    <Content Include="Images\9996.jpg" />
+    <Content Include="Images\Alpham.PNG" />
+    <Content Include="Images\BeefBiriyani.PNG" />
+    <Content Include="Images\Capture.PNG" />
+    <Content Include="Images\ChikenBiriyani.PNG" />
+    <Content Include="Images\Delete.PNG" />
+    <Content Include="Images\Edit.PNG" />
+    <Content Include="Images\oreo.PNG" />
+    <Content Include="Images\Rice.PNG" />
+    <Content Include="Images\Rices.PNG" />
+    <Content Include="Images\Shakes.PNG" />
+    <Content Include="Images\Snacks.PNG" />
+    <Content Include="Images\Vada.PNG" />
+    <Content Include="ResetPassword.aspx" />
+    <Content Include="UserLogout.aspx" />
+    <Content Include="UserProfile.aspx" />
     <Content Include="UserRegistration.aspx" />
     <Content Include="UserLogin.aspx" />
+    <Content Include="UserFeedback.aspx" />
+    <Content Include="AboutRestuarant.aspx" />
+    <Content Include="ContactUs.aspx" />
+    <Content Include="Admin\AdminMaster.Master" />
+    <Content Include="Images\Food_Delivery - Shortcut.lnk" />
+    <Content Include="Images\Thumbs.db" />
+    <Content Include="UserViewCategory.aspx" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -162,6 +221,41 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AddCategory.aspx.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddCategory.aspx.designer.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddItem.aspx.cs">
+      <DependentUpon>AddItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddItem.aspx.designer.cs">
+      <DependentUpon>AddItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminMaster.Master.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminMaster.Master.designer.cs">
+      <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminViewFeedback.aspx.cs">
+      <DependentUpon>AdminViewFeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminViewFeedback.aspx.designer.cs">
+      <DependentUpon>AdminViewFeedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewOrders.aspx.cs">
+      <DependentUpon>ViewOrders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewOrders.aspx.designer.cs">
+      <DependentUpon>ViewOrders.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -187,6 +281,27 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogout.aspx.cs">
+      <DependentUpon>UserLogout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserLogout.aspx.designer.cs">
+      <DependentUpon>UserLogout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -230,6 +345,34 @@
     </Compile>
     <Compile Include="UserLogin.aspx.designer.cs">
       <DependentUpon>UserLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserFeedback.aspx.cs">
+      <DependentUpon>UserFeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserFeedback.aspx.designer.cs">
+      <DependentUpon>UserFeedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AboutRestuarant.aspx.cs">
+      <DependentUpon>AboutRestuarant.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutRestuarant.aspx.designer.cs">
+      <DependentUpon>AboutRestuarant.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserViewCategory.aspx.cs">
+      <DependentUpon>UserViewCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserViewCategory.aspx.designer.cs">
+      <DependentUpon>UserViewCategory.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
