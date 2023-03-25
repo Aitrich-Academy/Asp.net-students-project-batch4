@@ -67,10 +67,6 @@ namespace Food_Delivery
                 lblMsg.Text = "failed due to some  error";
             }
 
-           
-
-
-
         }
 
         protected void BtnUpdate_Click(object sender, EventArgs e)

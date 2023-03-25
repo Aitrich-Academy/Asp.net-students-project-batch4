@@ -43,7 +43,7 @@ namespace BLL.Admin.Manager
                 {
                     _list.Add(new ItemProperty
                     {
-                        CatID = (dr["CatName"]).ToString(),
+                        CatID = (dr["CatID"]).ToString(),
                         ItmID = Convert.ToInt32(dr["ItmID"]),
                         ItmName = dr["ItmName"].ToString(),
                         ItmDiscription = dr["ItmDiscription"].ToString(),
@@ -110,5 +110,25 @@ namespace BLL.Admin.Manager
             S1.Add("ItmID", obj_proitem.ItmID);
             return obj_db.executeprocedure(S1, "Item_delete");
         }
+        public void SelectItemById()
+        {
+            DataTable dt = new DataTable();
+            S1.Clear();
+            S1.Add("ItmID", obj_proitem.ItmID);
+            dt = obj_db.Getdatatabel(S1, "SelectItemByID");
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    obj_proitem.ItmID = Convert.ToInt32(dr["ItmID"]);
+                    obj_proitem.ItmName = dr["ItmName"].ToString();
+                    obj_proitem.ItmPrice = Convert.ToDecimal(dr["ItmPrice"]);
+                    obj_proitem.ItmDiscription = dr["ItmDiscription"].ToString();
+                    obj_proitem.ItmImage = dr["ItmImage"].ToString();
+
+                }
+            }
+        }
+
     }
 }

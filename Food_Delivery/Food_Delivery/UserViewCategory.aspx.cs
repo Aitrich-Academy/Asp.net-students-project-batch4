@@ -30,7 +30,7 @@ namespace Food_Delivery
             var HiddenField = DataListItem.FindControl("hidd") as HiddenField;
             string s1 = HiddenField.Value;
             Session["CatID"] = s1;
-            Response.Redirect("UserViewItem.aspx");
+            Response.Redirect("UserViewItems.aspx");
         }
     }
 }
