@@ -43,7 +43,7 @@ namespace BLL.Admin.Manager
                 {
                     _list.Add(new ItemProperty
                     {
-                        CatID = (dr["CatID"]).ToString(),
+                        CatID = Convert.ToInt32(dr["CatID"]),
                         ItmID = Convert.ToInt32(dr["ItmID"]),
                         ItmName = dr["ItmName"].ToString(),
                         ItmDiscription = dr["ItmDiscription"].ToString(),
