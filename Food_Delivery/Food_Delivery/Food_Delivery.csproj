@@ -109,7 +109,6 @@
     <Content Include="Admin\AddCategory.aspx" />
     <Content Include="Admin\AddItem.aspx" />
     <Content Include="Admin\AdminViewFeedback.aspx" />
-    <Content Include="Admin\ViewOrders.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -248,13 +247,6 @@
     </Compile>
     <Compile Include="Admin\AdminViewFeedback.aspx.designer.cs">
       <DependentUpon>AdminViewFeedback.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\ViewOrders.aspx.cs">
-      <DependentUpon>ViewOrders.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\ViewOrders.aspx.designer.cs">
-      <DependentUpon>ViewOrders.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
