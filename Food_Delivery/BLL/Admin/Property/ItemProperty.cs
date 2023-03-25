@@ -8,7 +8,7 @@ namespace BLL.Admin.Property
 {
     public class ItemProperty
     {
-        public string CatID
+        public int CatID
         {
             get;
             set;
