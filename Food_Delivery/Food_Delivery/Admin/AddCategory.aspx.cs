@@ -136,29 +136,9 @@ namespace Food_Delivery.Admin
             selectAllCategory();
         }
 
-        protected void DataListCategory_EditCommand(object source, DataListCommandEventArgs e)
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            try
-            {
-                HiddenFieldCategory.Value = (DataListCategory.DataKeys[e.Item.ItemIndex]).ToString();
-                obj_cat.obj_proitem.CatID = Convert.ToInt32(HiddenFieldCategory.Value);
-                obj_cat.SelectByID();
-                TextBoxCatName.Text = obj_cat.obj_proitem.CatName;
-                ButtonAdd.Visible = false;
-                update.Visible = true;
-                Cancel.Visible = true;
-
-
-
-               
-
-              
-
-            }
-            catch (Exception ex)
-            {
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('error' +" + ex.Message.ToString() + "')", true);
-            }
+           
 
         }
 
@@ -166,11 +146,8 @@ namespace Food_Delivery.Admin
         {
             Categoryupdate();
             selectAllCategory();
-           
-
         }
-
-       public void Categoryupdate()
+        public void Categoryupdate()
         {
             string filename = GetRandomText();
             string path = Server.MapPath("~/Images/");
@@ -178,11 +155,11 @@ namespace Food_Delivery.Admin
             obj_cat.obj_proitem.CatImage = ("~/Images/" + filename + ".jpg");
             obj_cat.obj_proitem.CatName = TextBoxCatName.Text;
             obj_cat.obj_proitem.CatID = Convert.ToInt32(HiddenFieldCategory.Value);
-           string result= obj_cat.categoeyupdate();
+            string result = obj_cat.categoeyupdate();
             update.Visible = false;
-           ButtonAdd.Visible = true;
-           Cancel.Visible = false;
-            
+            ButtonAdd.Visible = true;
+            Cancel.Visible = false;
+
             if (result == "Success")
             {
                 LabelMsg.Visible = true;
@@ -196,6 +173,24 @@ namespace Food_Delivery.Admin
                 LabelMsg.Text = "failed due to some  error";
             }
             Clear();
+        }
+
+        protected void DataListCategory_EditCommand(object source, DataListCommandEventArgs e)
+        {
+            try
+            {
+                HiddenFieldCategory.Value = (DataListCategory.DataKeys[e.Item.ItemIndex]).ToString();
+                obj_cat.obj_proitem.CatID = Convert.ToInt32(HiddenFieldCategory.Value);
+                obj_cat.SelectByID();
+                TextBoxCatName.Text = obj_cat.obj_proitem.CatName;
+                ButtonAdd.Visible = false;
+                update.Visible = true;
+                Cancel.Visible = true;
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('error' +" + ex.Message.ToString() + "')", true);
+            }
         }
     }               
 }

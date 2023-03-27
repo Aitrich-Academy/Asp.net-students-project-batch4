@@ -48,8 +48,8 @@ namespace Food_Delivery
             view_mngr.view_pro.UPhone = txtPhone.Text.Trim().ToString();
             view_mngr.view_pro.UPinCode = txtPincode.Text.Trim().ToString();
             view_mngr.view_pro.UEmail = txtEmail.Text.Trim().ToString();
-            //view_mngr.view_pro.Username = lblUsername.Text;
-            //view_mngr.view_pro.Password = lblPassword.Text;
+            view_mngr.view_pro.Username = lblUsername.Text.Trim().ToString();
+            view_mngr.view_pro.Password = lblPassword.Text.Trim().ToString();
             string result = view_mngr.UserProfileUpdate();
             //TxtName.Text = "";
             //Hf.Value = "-1";

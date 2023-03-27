@@ -147,7 +147,7 @@ namespace Food_Delivery
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUsername;
+        protected global::System.Web.UI.WebControls.TextBox lblUsername;
 
         /// <summary>
         /// lbPassword control.
@@ -165,7 +165,7 @@ namespace Food_Delivery
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPassword;
+        protected global::System.Web.UI.WebControls.TextBox lblPassword;
 
         /// <summary>
         /// BtnUpdate control.

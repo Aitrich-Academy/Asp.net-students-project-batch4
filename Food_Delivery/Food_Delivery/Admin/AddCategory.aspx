@@ -20,9 +20,10 @@
         <asp:HiddenField ID="HiddenFieldCategory" runat="server" Value="-1" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="ButtonAdd" runat="server" Height="30px" OnClick="Button1_Click" Text="Add" Width="163px" BackColor="#183434" ForeColor="#FFCC66" style="border-radius:10px;" />
-        &nbsp;<asp:Button ID="update" runat="server" Height="30px" OnClick="update_Click" Text="UPDATE" Width="163px" BackColor="#183434" ForeColor="#FFCC66" style="border-radius:10px;" Visible="False" />
+        &nbsp;
+         &nbsp;<asp:Button ID="update" runat="server" Height="30px" OnClick="update_Click" Text="UPDATE" Width="163px" BackColor="#183434" ForeColor="#FFCC66" style="border-radius:10px;" Visible="False" />
         <asp:Button ID="Cancel" runat="server" Height="30px" Text="CANCEL" Width="163px" BackColor="#183434" ForeColor="#FFCC66" style="border-radius:10px;" Visible="False" />
-        </p>
+    </p>
     <p>
         <asp:Label ID="LabelMsg" runat="server" Text="Label" Visible="False"></asp:Label>
     </p>
@@ -37,7 +38,7 @@
                     <%# Eval("CatName") %>
                        
                 </h2>
-                &nbsp;<asp:ImageButton ID="ImageButton1" runat="server" Height="42px" ImageUrl="~/Images/Edit.PNG" Width="70px" CommandName="Edit" />
+                &nbsp;<asp:ImageButton ID="ImageButton1" runat="server" Height="42px" ImageUrl="~/Images/Edit.PNG" Width="70px" CommandName="Edit" OnClick="ImageButton1_Click" />
                  &nbsp;
                  <asp:ImageButton ID="ImageButton2" runat="server" Height="37px" ImageUrl="~/Images/Delete.PNG" Width="104px" CommandName="Delete" />
                 <br />

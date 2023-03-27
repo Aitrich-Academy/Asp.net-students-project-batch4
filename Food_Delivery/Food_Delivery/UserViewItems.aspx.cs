@@ -18,7 +18,9 @@ namespace Food_Delivery
 
 
                 SelectByCategory();
-
+                int id = Convert.ToInt32(Session.Contents["uid"]);
+                Session["uid"] = id;
+                
 
             }
         }
@@ -27,6 +29,7 @@ namespace Food_Delivery
         {
             int s2 = Convert.ToInt32(Session.Contents["CatID"]);
             obj_ItemAddManager.obj_proitem.CatID = s2;
+            Session["CatID"] = s2;
             DataListItem.DataSource = obj_ItemAddManager.CategoryWiseSelection();
             DataListItem.DataBind();
         }

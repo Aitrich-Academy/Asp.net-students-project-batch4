@@ -11,7 +11,7 @@ namespace Food_Delivery
 {
 
 
-    public partial class ResetPassword
+    public partial class UserViewOrderedItems
     {
 
         /// <summary>
@@ -24,13 +24,13 @@ namespace Food_Delivery
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lblreset control.
+        /// Menu1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblreset;
+        protected global::System.Web.UI.WebControls.Menu Menu1;
 
         /// <summary>
         /// Label1 control.
@@ -42,39 +42,21 @@ namespace Food_Delivery
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// txtnewpwd control.
+        /// GridViewOrder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtnewpwd;
+        protected global::System.Web.UI.WebControls.GridView GridViewOrder;
 
         /// <summary>
-        /// Label2 control.
+        /// lblMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-
-        /// <summary>
-        /// txtcpwd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcpwd;
-
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Label lblMsg;
     }
 }
