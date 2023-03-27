@@ -317,6 +317,13 @@
     <Compile Include="SingleViewItem.aspx.designer.cs">
       <DependentUpon>SingleViewItem.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SingleViewItem.aspx.cs">
+      <DependentUpon>SingleViewItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SingleViewItem.aspx.designer.cs">
+      <DependentUpon>SingleViewItem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserLogout.aspx.cs">
       <DependentUpon>UserLogout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

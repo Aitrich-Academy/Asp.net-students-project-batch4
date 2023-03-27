@@ -23,7 +23,7 @@ namespace BLL.Admin.Manager
             S1.Clear();
             S1.Add("ItmName", obj_proitem.ItmName);
             S1.Add("ItmPrice", obj_proitem.ItmPrice);
-            S1.Add("CatID", obj_proitem.CatName);
+            S1.Add("CatID", obj_proitem.CatID);
             S1.Add("ItmImage", obj_proitem.ItmImage);
             S1.Add("ItmDiscription", obj_proitem.ItmDiscription);
             S1.Add("CookingTime", obj_proitem.CookingTime);
@@ -85,7 +85,10 @@ namespace BLL.Admin.Manager
                     ItmName = dr["ItmName"].ToString(),
                     ItmDiscription = dr["ItmDiscription"].ToString(),
                     ItmPrice = Convert.ToDecimal(dr["ItmPrice"]),
-                    ItmImage = dr["ItmImage"].ToString()
+                    ItmImage = dr["ItmImage"].ToString(),
+                    CookingTime = int.Parse(dr["CookingTime"].ToString())
+
+
                 });
 
 
