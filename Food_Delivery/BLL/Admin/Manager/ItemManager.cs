@@ -21,7 +21,7 @@ namespace BLL.Admin.Manager
             S1.Clear();
             S1.Add("ItmName", obj_proitem.ItmName);
             S1.Add("ItmPrice", obj_proitem.ItmPrice);
-            S1.Add("CatID", obj_proitem.CatName);
+            S1.Add("CatID", obj_proitem.CatID);
             S1.Add("ItmImage", obj_proitem.ItmImage);
             S1.Add("ItmDiscription", obj_proitem.ItmDiscription);
             S1.Add("CookingTime", obj_proitem.CookingTime);
@@ -71,7 +71,10 @@ namespace BLL.Admin.Manager
                     ItmName = dr["ItmName"].ToString(),
                     ItmDiscription = dr["ItmDiscription"].ToString(),
                     ItmPrice = Convert.ToDecimal(dr["ItmPrice"]),
-                    ItmImage = dr["ItmImage"].ToString()
+                    ItmImage = dr["ItmImage"].ToString(),
+                    CookingTime = int.Parse(dr["CookingTime"].ToString())
+
+
                 });
 
 
@@ -109,6 +112,40 @@ namespace BLL.Admin.Manager
             S1.Clear();
             S1.Add("ItmID", obj_proitem.ItmID);
             return obj_db.executeprocedure(S1, "Item_delete");
+        }
+        public void SelectItemById()
+        {
+            DataTable dt = new DataTable();
+            S1.Clear();
+            S1.Add("ItmID", obj_proitem.ItmID);
+            dt = obj_db.Getdatatabel(S1, "SelectItemByID");
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    obj_proitem.ItmID = Convert.ToInt32(dr["ItmID"]);
+                    obj_proitem.ItmName = dr["ItmName"].ToString();
+                    obj_proitem.ItmPrice = Convert.ToDecimal(dr["ItmPrice"]);
+                    obj_proitem.ItmDiscription = dr["ItmDiscription"].ToString();
+                    obj_proitem.ItmImage = dr["ItmImage"].ToString();
+                    obj_proitem.CookingTime = Convert.ToInt32(dr["CookingTime"]);
+
+                }
+            }
+        }
+
+        public string ItemUpdate()
+        {
+            S1.Clear();
+            S1.Add("ItmID", obj_proitem.ItmID);
+            S1.Add("CatID", obj_proitem.CatID);
+            S1.Add("ItmName", obj_proitem.ItmName);
+            S1.Add("ItmImage", obj_proitem.ItmImage);
+            S1.Add("ItmDiscription", obj_proitem.ItmDiscription);
+            S1.Add("CookingTime", obj_proitem.CookingTime);
+            S1.Add("ItmPrice", obj_proitem.ItmPrice);
+           
+            return obj_db.executeprocedure(S1, "Item_Update");
         }
     }
 }

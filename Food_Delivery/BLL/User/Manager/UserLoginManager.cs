@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace BLL.User.Manager
 {
@@ -18,9 +19,23 @@ namespace BLL.User.Manager
         public string user_login()
         {
             S1.Clear();
+            string s1;
             S1.Add("Username", user_log_Pro.Username);
             S1.Add("Password", user_log_Pro.Password);
-            return db_obj.executeprocedure(S1,"User_Login");
+         DataTable dt= db_obj.Getdatatabel(S1,"User_Login");
+            List<UserLoginProperty> _list = new List<UserLoginProperty>();
+            if(dt.Rows.Count>0)
+            {
+                s1 = "Success";
+                user_log_Pro.UID = int.Parse(dt.Rows[0].ItemArray[0].ToString());
+               
+            }
+            else
+            {
+                s1 = "Error";
+            }
+            return s1;
+
         }
     }
 }

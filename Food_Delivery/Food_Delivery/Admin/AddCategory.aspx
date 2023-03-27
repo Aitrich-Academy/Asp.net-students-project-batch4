@@ -19,13 +19,15 @@
     <p>
         <asp:HiddenField ID="HiddenFieldCategory" runat="server" Value="-1" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="Button1" runat="server" Height="30px" OnClick="Button1_Click" Text="Add" Width="163px" BackColor="#183434" ForeColor="#FFCC66" style="border-radius:10px;" />
-        &nbsp;</p>
+        <asp:Button ID="ButtonAdd" runat="server" Height="30px" OnClick="Button1_Click" Text="Add" Width="163px" BackColor="#183434" ForeColor="#FFCC66" style="border-radius:10px;" />
+        &nbsp;<asp:Button ID="update" runat="server" Height="30px" OnClick="update_Click" Text="UPDATE" Width="163px" BackColor="#183434" ForeColor="#FFCC66" style="border-radius:10px;" Visible="False" />
+        <asp:Button ID="Cancel" runat="server" Height="30px" Text="CANCEL" Width="163px" BackColor="#183434" ForeColor="#FFCC66" style="border-radius:10px;" Visible="False" />
+        </p>
     <p>
         <asp:Label ID="LabelMsg" runat="server" Text="Label" Visible="False"></asp:Label>
     </p>
     <p>
-        <asp:DataList ID="DataListCategory" runat="server" RepeatColumns="4" RepeatDirection="Horizontal" Width="806px" OnDeleteCommand="DataListCategory_DeleteCommand"  DataKeyField="CatID">
+        <asp:DataList ID="DataListCategory" runat="server" RepeatColumns="4" RepeatDirection="Horizontal" Width="806px" OnDeleteCommand="DataListCategory_DeleteCommand"  DataKeyField="CatID" OnEditCommand="DataListCategory_EditCommand">
              <ItemTemplate>
                 <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("CatImage") %>' Width
                     ="300px" Height="300px"/>

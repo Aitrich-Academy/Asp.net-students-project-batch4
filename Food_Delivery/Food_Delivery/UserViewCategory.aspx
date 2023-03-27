@@ -6,7 +6,7 @@
     <p style="text-align:center;color:red;">&nbsp;</p>
     <asp:HiddenField ID="HiddenField1" runat="server" />
     <p style="text-align:center;color:red;">
-        <asp:DataList ID="DataList1" runat="server" DataKeyField="CatID" Height="285px" RepeatColumns="4" RepeatDirection="Horizontal" Width="1284px">
+        <asp:DataList ID="DataList1" runat="server" DataKeyField="CatID" Height="285px" RepeatColumns="4" RepeatDirection="Horizontal" Width="1284px" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
             <ItemTemplate>
                 <asp:Label ID="Label1" runat="server" Text='<%# Eval("CatID") %>'></asp:Label>
                 <br />

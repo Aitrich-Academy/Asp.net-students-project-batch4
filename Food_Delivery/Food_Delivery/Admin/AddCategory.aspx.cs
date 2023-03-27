@@ -135,5 +135,67 @@ namespace Food_Delivery.Admin
             }
             selectAllCategory();
         }
+
+        protected void DataListCategory_EditCommand(object source, DataListCommandEventArgs e)
+        {
+            try
+            {
+                HiddenFieldCategory.Value = (DataListCategory.DataKeys[e.Item.ItemIndex]).ToString();
+                obj_cat.obj_proitem.CatID = Convert.ToInt32(HiddenFieldCategory.Value);
+                obj_cat.SelectByID();
+                TextBoxCatName.Text = obj_cat.obj_proitem.CatName;
+                ButtonAdd.Visible = false;
+                update.Visible = true;
+                Cancel.Visible = true;
+
+
+
+               
+
+              
+
+            }
+            catch (Exception ex)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Message", "alert('error' +" + ex.Message.ToString() + "')", true);
+            }
+
+        }
+
+        protected void update_Click(object sender, EventArgs e)
+        {
+            Categoryupdate();
+            selectAllCategory();
+           
+
+        }
+
+       public void Categoryupdate()
+        {
+            string filename = GetRandomText();
+            string path = Server.MapPath("~/Images/");
+            FileUploadCategory.SaveAs(path + filename + ".jpg");
+            obj_cat.obj_proitem.CatImage = ("~/Images/" + filename + ".jpg");
+            obj_cat.obj_proitem.CatName = TextBoxCatName.Text;
+            obj_cat.obj_proitem.CatID = Convert.ToInt32(HiddenFieldCategory.Value);
+           string result= obj_cat.categoeyupdate();
+            update.Visible = false;
+           ButtonAdd.Visible = true;
+           Cancel.Visible = false;
+            
+            if (result == "Success")
+            {
+                LabelMsg.Visible = true;
+                LabelMsg.Text = "Successfully updated";
+                //Lblimageshow.Visible = false;
+
+            }
+            else if (result == "Error")
+            {
+                LabelMsg.Visible = true;
+                LabelMsg.Text = "failed due to some  error";
+            }
+            Clear();
+        }
     }               
 }

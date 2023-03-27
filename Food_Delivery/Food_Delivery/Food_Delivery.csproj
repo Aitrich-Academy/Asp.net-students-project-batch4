@@ -173,6 +173,7 @@
     <Content Include="Images\Snacks.PNG" />
     <Content Include="Images\Vada.PNG" />
     <Content Include="ResetPassword.aspx" />
+    <Content Include="SingleViewItem.aspx" />
     <Content Include="UserLogout.aspx" />
     <Content Include="UserProfile.aspx" />
     <Content Include="UserRegistration.aspx" />
@@ -214,6 +215,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="UserViewItems.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -281,6 +283,13 @@
     <Compile Include="ResetPassword.aspx.designer.cs">
       <DependentUpon>ResetPassword.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SingleViewItem.aspx.cs">
+      <DependentUpon>SingleViewItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SingleViewItem.aspx.designer.cs">
+      <DependentUpon>SingleViewItem.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserLogout.aspx.cs">
       <DependentUpon>UserLogout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -316,6 +325,13 @@
     </Compile>
     <Compile Include="UserMaster.Master.designer.cs">
       <DependentUpon>UserMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserViewItems.aspx.cs">
+      <DependentUpon>UserViewItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserViewItems.aspx.designer.cs">
+      <DependentUpon>UserViewItems.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
