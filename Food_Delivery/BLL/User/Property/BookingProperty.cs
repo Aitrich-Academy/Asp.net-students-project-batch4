@@ -4,15 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL.Admin.Property
+namespace BLL.User.Property
 {
-    public class ViewOrderProperty
+    public class BookingProperty
     {
-        public int OID { get; set; }
+        public int BookID { get; set; }
+        public int ItmID { get; set; }
+        public int CatID { get; set; }
         public int UID { get; set; }
-        public string ItmName { get; set; }
+
         public int Qty { get; set; }
         public decimal Total { get; set; }
-
+        public string Status { get; set; }
     }
 }

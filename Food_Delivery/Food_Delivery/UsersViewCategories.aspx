@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserViewItems.aspx.cs" Inherits="Food_Delivery.UserViewItems" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UsersViewCategories.aspx.cs" Inherits="Food_Delivery.UsersViewCategories" %>
 
 <!DOCTYPE html>
 
@@ -13,8 +13,8 @@
             <br />
             <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" style="margin-left:600px;" ForeColor="#FFCC66">
                 <Items>
-                    <asp:MenuItem Text="Food Category" Value="Food Category" NavigateUrl="~/UsersViewCategories.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Ordered Items" Value="Order Items"></asp:MenuItem>
+                    <asp:MenuItem Text="Edit Profile" Value="Edit Profile" NavigateUrl="~/UserProfile.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Ordered Items" Value="Order Items" NavigateUrl="~/UserViewOrderedItems.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Feedback" Value="Feedback" NavigateUrl="~/Feedback.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="About " Value="About " NavigateUrl="~/AboutRestuarant.aspx"></asp:MenuItem>
                     <asp:MenuItem NavigateUrl="~/ContactUs.aspx" Text="ContactUs" Value="Log Out"></asp:MenuItem>
@@ -23,17 +23,22 @@
                 <StaticMenuItemStyle HorizontalPadding="10px" ItemSpacing="20px" />
             </asp:Menu>
         </div>
-        <div>
-            <asp:DataList ID="DataListItem" runat="server" Height="297px" RepeatColumns="4" RepeatDirection="Horizontal" Width="1095px" >
-        <ItemTemplate>
-            <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl='<%# Eval("ItmImage") %>' Width="300px" Height="300px" OnClick="ImageButton2_Click" />
-            <br />
-            <asp:HiddenField ID="Hf" runat="server" Value='<%# Eval("ItmID") %>' />
-            <h2> <%# Eval("ItmName") %></h2>
-            <p>Rs.<%# Eval("ItmPrice") %></p>
-        </ItemTemplate>
-    </asp:DataList>
-        </div>
+         <h1 style="text-align:center;color:#183434;margin-top:50px;">CHOOSE YOUR CATEGORY</h1>
+    <p style="text-align:center;color:red;">&nbsp;</p>
+    <asp:HiddenField ID="HiddenField1" runat="server" />
+    <p style="text-align:center;color:red;">
+        <asp:DataList ID="DataList1" runat="server" DataKeyField="CatID" Height="285px" RepeatColumns="4" RepeatDirection="Horizontal" Width="1284px">
+            <ItemTemplate>
+                <asp:Label ID="Label1" runat="server" Text='<%# Eval("CatID") %>' visible="false"></asp:Label>
+                <br />
+                <asp:ImageButton ID="ImageButton1" runat="server" Height="300px" ImageUrl='<%# Eval("CatImage") %>' OnClick="ImageButton1_Click" Width="300px" />
+                <asp:HiddenField ID="hidd" runat="server" Value='<%# Eval("CatID") %>'/>
+                
+                
+                <h3><%# Eval("CatName") %></h3>
+            </ItemTemplate>
+
+        </asp:DataList>
     </form>
 </body>
 </html>

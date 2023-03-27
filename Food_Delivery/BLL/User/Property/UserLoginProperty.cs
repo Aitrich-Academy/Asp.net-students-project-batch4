@@ -11,5 +11,6 @@ namespace BLL.User.Property
         public string Username { get; set; }
         public string Password { get; set; }
         public string Status { get; set; }
+        public int UID { get;  set; }
     }
 }

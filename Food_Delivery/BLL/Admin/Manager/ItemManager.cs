@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using BLL.Admin.Property;
 using DLL;
 using System.Data;
+using BLL.User.Property;
 
 namespace BLL.Admin.Manager
 {
@@ -14,6 +15,7 @@ namespace BLL.Admin.Manager
     {
         DBhelper obj_db = new DBhelper();
         public ItemProperty obj_proitem = new ItemProperty();
+        public BookingProperty obj_bookpro = new BookingProperty();
         private SortedList S1 = new SortedList();
 
         public string itemInsert()
@@ -57,6 +59,18 @@ namespace BLL.Admin.Manager
             return _list;
         }
 
+        public string Book_Insert()
+        {
+            S1.Clear();
+            S1.Add("ItmID", obj_bookpro.ItmID);
+            S1.Add("CatID", obj_bookpro.CatID);
+            S1.Add("UID", obj_bookpro.UID);
+            S1.Add("Qty", obj_bookpro.Qty);
+            S1.Add("Total", obj_bookpro.Total);
+            return obj_db.executeprocedure(S1, "Order_insert");
+
+        }
+
         public object SelectAllItems()
         {
 
@@ -78,6 +92,38 @@ namespace BLL.Admin.Manager
 
             }
             return _list;
+        }
+
+
+
+        public string getorderCategoryName()
+        {
+            S1.Clear();
+            S1.Add("CatID", obj_bookpro.CatID);
+            return obj_db.executeprocedure(S1, "getorderCategoryName");
+        }
+
+        public string getorderItemName()
+        {
+            S1.Clear();
+            S1.Add("ItmID", obj_bookpro.ItmID);
+            return obj_db.executeprocedure(S1, "getOrderItemName");
+        }
+
+        public string getorderUser()
+        {
+            S1.Clear();
+            S1.Add("UID", obj_bookpro.UID);
+            return obj_db.executeprocedure(S1, "getOrderUser");
+
+
+        }
+
+        public string GetEmailId()
+        {
+            S1.Clear();
+            S1.Add("UID", obj_bookpro.UID);
+            return obj_db.executeprocedure(S1, "Get_User_EmailId");
         }
 
         public List<CategoryProperty> SelectAllCategory()
@@ -109,6 +155,39 @@ namespace BLL.Admin.Manager
             S1.Clear();
             S1.Add("ItmID", obj_proitem.ItmID);
             return obj_db.executeprocedure(S1, "Item_delete");
+        }
+        public void SelectItemById()
+        {
+            DataTable dt = new DataTable();
+            S1.Clear();
+            S1.Add("ItmID", obj_proitem.ItmID);
+            dt = obj_db.Getdatatabel(S1, "SelectItemByID");
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    obj_proitem.ItmID = Convert.ToInt32(dr["ItmID"]);
+                    obj_proitem.ItmName = dr["ItmName"].ToString();
+                    obj_proitem.ItmPrice = Convert.ToDecimal(dr["ItmPrice"]);
+                    obj_proitem.ItmDiscription = dr["ItmDiscription"].ToString();
+                    obj_proitem.ItmImage = dr["ItmImage"].ToString();
+
+                }
+            }
+        }
+
+        public string ItemUpdate()
+        {
+            S1.Clear();
+            S1.Add("ItmID", obj_proitem.ItmID);
+            S1.Add("CatID", obj_proitem.CatID);
+            S1.Add("ItmName", obj_proitem.ItmName);
+            S1.Add("ItmImage", obj_proitem.ItmImage);
+            S1.Add("ItmDiscription", obj_proitem.ItmDiscription);
+            S1.Add("CookingTime", obj_proitem.CookingTime);
+            S1.Add("ItmPrice", obj_proitem.ItmPrice);
+
+            return obj_db.executeprocedure(S1, "Item_Update");
         }
     }
 }

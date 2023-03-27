@@ -13,9 +13,9 @@
             <br />
             <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" style="margin-left:600px;" ForeColor="#FFCC66">
                 <Items>
-                    <asp:MenuItem Text="Food Category" Value="Food Category" NavigateUrl="~/UserViewCategory.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Ordered Items" Value="Order Items"></asp:MenuItem>
-                    <asp:MenuItem Text="Feedback" Value="Feedback" NavigateUrl="~/UserFeedback.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Food Category" Value="Food Category" NavigateUrl="~/UsersViewCategories.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Ordered Items" Value="Order Items" NavigateUrl="~/UserViewOrderedItems.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Feedback" Value="Feedback" NavigateUrl="~/Feedback.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="About " Value="About " NavigateUrl="~/AboutRestuarant.aspx"></asp:MenuItem>
                     <asp:MenuItem NavigateUrl="~/ContactUs.aspx" Text="ContactUs" Value="Log Out"></asp:MenuItem>
                     <asp:MenuItem Text="Log Out" Value="Log Out" NavigateUrl="~/UserLogout.aspx"></asp:MenuItem>
@@ -47,7 +47,8 @@
         </p>
     <p style="margin-left: 80px">
         <asp:Button ID="Buttonorder" runat="server" OnClick="Buttonorder_Click" Text="Order Now" style="margin-left: 1px" />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label2" runat="server" Text="Label" Visible="False"></asp:Label>
     </p></div>
        
 

@@ -60,5 +60,32 @@ namespace BLL.Admin.Manager
             return obj_db.executeprocedure(S1, "Category_delete");
         }
 
+        public void SelectByID()
+        {
+            S1.Clear();
+            S1.Add("CatID", obj_proitem.CatID);
+
+            DataTable dt = new DataTable();
+
+            dt = obj_db.Getdatatabel(S1, "SelectCategory");
+            if (dt.Rows.Count > 0)
+            {
+                foreach (DataRow dr in dt.Rows)
+                {
+                    obj_proitem.CatID = Convert.ToInt32(dr["CatID"]);
+                    obj_proitem.CatName = dr["CatName"].ToString();
+                    obj_proitem.CatImage = (dr["Image"]).ToString();
+                }
+            }
+        }
+
+        public string categoeyupdate()
+        {
+            S1.Clear();
+            S1.Add("CatID", obj_proitem.CatID);
+            S1.Add("CatName", obj_proitem.CatName);
+            S1.Add("CatImage", obj_proitem.CatImage);
+            return obj_db.executeprocedure(S1, "Category_Update");
+        }
     }
 }

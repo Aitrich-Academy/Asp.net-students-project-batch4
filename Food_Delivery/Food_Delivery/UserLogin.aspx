@@ -42,7 +42,7 @@
     </p>
             <p>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="Blue" NavigateUrl="~/ResetPassword.aspx">Forget Password ?</asp:HyperLink>
+         <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="Blue" NavigateUrl="~/UserRegistration.aspx">Forget Password ?</asp:HyperLink>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
             <p>
         &nbsp;<asp:Label ID="lblMsg" runat="server" Text="LblMsg" Visible="False"></asp:Label>

@@ -52,8 +52,8 @@ namespace BLL.User.Manager
             S1.Add("UPhone", view_pro.UPhone);
             S1.Add("UPinCode", view_pro.UPinCode);
             S1.Add("UEmail", view_pro.UEmail);
-            //S1.Add("Username", view_pro.Username);
-            //S1.Add("Password", view_pro.Password);
+            S1.Add("Username", view_pro.Username);
+            S1.Add("Password", view_pro.Password);
             return db_obj.executeprocedure(S1, "UserProfile_updates");
 
         }

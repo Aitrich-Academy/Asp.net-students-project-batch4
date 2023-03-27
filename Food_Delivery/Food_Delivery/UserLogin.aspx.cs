@@ -13,7 +13,7 @@ namespace Food_Delivery
         UserLoginManager User_log_Mngr = new UserLoginManager();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
         public void User_Login()
         {
@@ -27,9 +27,9 @@ namespace Food_Delivery
                 Session["uid"] = txtUsername.Text;
                 Session["Username"] = txtUsername.Text;
                 Session["Password"] = txtUsername.Text;
-
+                getID();
                 //Response.Redirect("~/Home.aspx");
-                Response.Redirect("UserProfile.aspx");
+                Response.Redirect("UsersViewCategories.aspx");
             }
             else
             {
@@ -38,12 +38,27 @@ namespace Food_Delivery
             }
 
         }
+        public void getID()
+        {
+            User_log_Mngr.user_log_Pro.Username = txtUsername.Text.Trim().ToString();
+            User_log_Mngr.user_log_Pro.Password = txtPassword.Text.Trim().ToString();
+            User_log_Mngr.GetUserID();
+            Session["uid"] = User_log_Mngr.user_log_Pro.UID;
+            //Session["uid"] = Convert.ToInt32(result.ToString());
+        }
         protected void BtnLogin_Click(object sender, EventArgs e)
         {
+            if(txtUsername.Text=="admin" && txtPassword.Text == "admin")
+            {
+                Response.Redirect("Admin/AddCategory.aspx");
+            }
+            else
+            {
+                User_Login();
 
-            User_Login();
-            
-           
+            }
+
+
         }
     }
 }

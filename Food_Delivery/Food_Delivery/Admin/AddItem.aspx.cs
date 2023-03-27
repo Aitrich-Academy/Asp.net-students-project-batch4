@@ -161,7 +161,19 @@ namespace Food_Delivery.Admin
 
         protected void DataList1_EditCommand(object source, DataListCommandEventArgs e)
         {
-            DataList1.EditItemIndex=e.Item.ItemIndex;
+
+            HiddenFieldItem.Value = (DataList1.DataKeys[e.Item.ItemIndex]).ToString();
+            obj_ItemAddManager.obj_proitem.ItmID = Convert.ToInt32(HiddenFieldItem.Value);
+            obj_ItemAddManager.SelectItemById();
+            TextItemName.Text = obj_ItemAddManager.obj_proitem.ItmName;
+            TextItmPrice.Text = obj_ItemAddManager.obj_proitem.ItmPrice.ToString();
+            TextItemDiscription.Text = obj_ItemAddManager.obj_proitem.ItmDiscription.ToString();
+            DropDownListCatName.SelectedIndex = obj_ItemAddManager.obj_proitem.CatID;
+            // FileUploadItmImage.PostedFile.SaveAs(Server.MapPath("~/images/" + obj_ItemAddManager.obj_proitem.ItmImage));
+            TextCookTime.Text = obj_ItemAddManager.obj_proitem.CookingTime.ToString();
+            ButtonAddItem.Visible = false;
+            ButtonUpdate.Visible = true;
+            ButtonCancel.Visible = true;
         }
 
         protected void DataList1_UpdateCommand(object source, DataListCommandEventArgs e)
@@ -177,6 +189,55 @@ namespace Food_Delivery.Admin
         protected void LinkEdit_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ButtonUpdate_Click(object sender, EventArgs e)
+        {
+            ItemUpdate();
+            selectAllItems();
+        }
+        public void ItemUpdate()
+        {
+            string filename = GetRandomText();
+            string path = Server.MapPath("~/Images/");
+            FileUploadItmImage.SaveAs(path + filename + ".jpg");
+            obj_ItemAddManager.obj_proitem.ItmImage = ("~/Images/" + filename + ".jpg");
+            obj_ItemAddManager.obj_proitem.ItmName = TextItemName.Text;
+            obj_ItemAddManager.obj_proitem.ItmDiscription = TextItemDiscription.Text;
+            obj_ItemAddManager.obj_proitem.ItmPrice = Convert.ToInt32(TextItmPrice.Text);
+            obj_ItemAddManager.obj_proitem.CookingTime = Convert.ToInt32(TextCookTime.Text);
+            obj_ItemAddManager.obj_proitem.CatID = DropDownListCatName.SelectedIndex;
+            obj_ItemAddManager.obj_proitem.ItmID = Convert.ToInt32(HiddenFieldItem.Value);
+            string result = obj_ItemAddManager.ItemUpdate();
+            Clear();
+            ButtonUpdate.Visible = false;
+            ButtonAddItem.Visible = true;
+            ButtonCancel.Visible = false;
+            if (result == "Success")
+            {
+                LabelMsg.Visible = true;
+                LabelMsg.Text = "Successfully updated";
+                //Lblimageshow.Visible = false;
+
+            }
+            else if (result == "Error")
+            {
+                LabelMsg.Visible = true;
+                LabelMsg.Text = "failed due to some  error";
+            }
+
+        }
+        protected void ButtonCancel_Click(object sender, EventArgs e)
+        {
+            Clear();
+            ButtonUpdate.Visible = false;
+            ButtonAddItem.Visible = true;
+            ButtonCancel.Visible = false;
         }
     }
 }

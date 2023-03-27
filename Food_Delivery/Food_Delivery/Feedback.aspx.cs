@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace Food_Delivery
 {
-    public partial class WebForm3 : System.Web.UI.Page
+    public partial class Feedback : System.Web.UI.Page
     {
         UserFeedbackManager Feed_Mngr = new UserFeedbackManager();
         protected void Page_Load(object sender, EventArgs e)
@@ -18,10 +18,10 @@ namespace Food_Delivery
         public void Feedback_Insert()
         {
             Feed_Mngr.feed_pro.UID = Session.Contents["uid"].ToString();
-            Feed_Mngr.feed_pro.Recomment = RadioButtonList1.SelectedValue ;
+            Feed_Mngr.feed_pro.Recomment = RadioButtonList1.SelectedValue;
             Feed_Mngr.feed_pro.Message = txtMessage.Text.Trim().ToString();
-            
-            
+
+
             string result = Feed_Mngr.FeedbackInsert();
             if (result == "Success")
             {
@@ -49,9 +49,9 @@ namespace Food_Delivery
 
         public void Clear()
         {
-            RadioButtonList1.SelectedValue="";
+            RadioButtonList1.SelectedValue = "";
             txtMessage.Text = "";
-           
+
         }
 
         protected void BtnSubmit_Click(object sender, EventArgs e)
