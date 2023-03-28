@@ -27,7 +27,7 @@
                     <asp:MenuItem Text="Category" Value="Category" NavigateUrl="~/Admin/AddCategory.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Item" Value="Item" NavigateUrl="~/Admin/AddItem.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Feedbacks" Value="Feedbacks" NavigateUrl="~/Admin/AdminViewFeedback.aspx"></asp:MenuItem>
-                    <asp:MenuItem Text="Orders" Value="Orders" NavigateUrl="~/Admin/ViewOrders.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Orders" Value="Orders" NavigateUrl="~/Admin/Viewordersforadmin.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Logout" Value="Logout" NavigateUrl="~/UserLogout.aspx"></asp:MenuItem>
                 </Items>
                 <StaticMenuItemStyle HorizontalPadding="15px" />

@@ -34,6 +34,7 @@ namespace Food_Delivery
                 Session["Password"] = txtUsername.Text;
                 getID();
                 //Response.Redirect("~/Home.aspx");
+
                 Response.Redirect("UsersViewCategories.aspx");
             }
             else
@@ -41,6 +42,9 @@ namespace Food_Delivery
                 lblMsg.Visible = true;
                 lblMsg.Text = "Incorrect Username and Password";
             }
+               
+
+
 
         }
         public void getID()

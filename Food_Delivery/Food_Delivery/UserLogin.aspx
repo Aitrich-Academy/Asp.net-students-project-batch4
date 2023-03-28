@@ -1,5 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UserMaster.Master" AutoEventWireup="true" CodeBehind="UserLogin.aspx.cs" Inherits="Food_Delivery.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+        <script>
+            function preventBack() {
+                window.history.forward();
+            }
+            setTimeout("preventBack()", 0);
+            window.onunload = function () {
+                null
+            };
+        </script>
     <style type="text/css">
         .auto-style1 {
             height: 581px;
