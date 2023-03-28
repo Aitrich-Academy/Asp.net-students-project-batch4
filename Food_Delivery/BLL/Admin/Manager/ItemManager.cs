@@ -174,6 +174,7 @@ namespace BLL.Admin.Manager
                     obj_proitem.ItmPrice = Convert.ToDecimal(dr["ItmPrice"]);
                     obj_proitem.ItmDiscription = dr["ItmDiscription"].ToString();
                     obj_proitem.ItmImage = dr["ItmImage"].ToString();
+                    obj_proitem.CookingTime = Convert.ToInt32(dr["CookingTime"]);
 
                 }
             }

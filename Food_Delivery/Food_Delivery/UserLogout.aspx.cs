@@ -13,8 +13,10 @@ namespace Food_Delivery
         UserLogoutProperty user_logout_pro = new UserLogoutProperty();
         protected void Page_Load(object sender, EventArgs e)
         {
+
             Session.Clear();
             Response.Redirect("UserLogin.aspx");
+           
         }
        
     }

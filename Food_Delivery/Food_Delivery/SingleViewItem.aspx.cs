@@ -1,7 +1,5 @@
 ﻿using BLL.Admin.Manager;
-using MailKit.Net.Smtp;
-using MailKit.Security;
-using MimeKit;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

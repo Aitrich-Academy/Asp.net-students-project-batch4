@@ -8,9 +8,11 @@ namespace BLL.Admin.Property
 {
     public class ViewOrderProperty
     {
+        public string UName { get; set; }
+        public string ItmName { get; set; }
         public int OID { get; set; }
         public int UID { get; set; }
-        public string ItmName { get; set; }
+        
         public int Qty { get; set; }
         public decimal Total { get; set; }
 

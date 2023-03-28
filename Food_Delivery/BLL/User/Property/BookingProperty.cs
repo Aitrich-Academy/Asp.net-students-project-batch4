@@ -10,6 +10,9 @@ namespace BLL.User.Property
     {
         public int BookID { get; set; }
         public int ItmID { get; set; }
+        public string ItmName { get; set;}
+        public string UName { get; set; }
+        public string Email { get; set; }
         public int CatID { get; set; }
         public int UID { get; set; }
 
